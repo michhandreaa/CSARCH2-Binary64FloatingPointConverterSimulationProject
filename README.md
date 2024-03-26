@@ -40,7 +40,7 @@ IEEE-754 Binary-64 floating point converter (including all special cases)
 - Screenshot of the program output (all possible test cases that will cover the specifications (normal, special case, different inputs, etc.)
 - Brief Explanation of screenshot, input, and tutput: (1) binary output with space between section (2) its hexadecimal equivalent (3) with option to output in text file.
 
-#### Test Case ... <add more as needed>
+#### Test Case ... (add more as needed)
 
 #### Test Case N: None of the above (error catching)
 - Screenshot of the program output
@@ -49,4 +49,4 @@ IEEE-754 Binary-64 floating point converter (including all special cases)
 ### Key Takeaways:
 
 ### Short video 
-  * <github link redirecting to short video location> - (Showing program compilation is correct and showing all test cases that will cover the specifications (normal, special case, different inputs, etc.)
+  * insert github link redirecting to short video location - (Showing program compilation is correct and showing all test cases that will cover the specifications (normal, special case, different inputs, etc.)
