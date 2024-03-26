@@ -1,8 +1,9 @@
 class ConversionSimulatorLogic:
-    def simulate(self, test_case, step_by_step):
-        # Method to simulate the conversion process
-        pass  # Add logic for simulation
+    def convert_to_binary(input_text, step_by_step=False):
+        pass  # Implement binary conversion logic
 
-    def simulate_step_by_step(self, test_case):
-        # Method to simulate the conversion process step by step
-        pass  # Add logic for step-by-step simulation
+    def convert_to_hexadecimal(input_text, step_by_step=False):
+        pass  # Implement hexadecimal conversion logic
+
+    def save_to_file(binary_result, hex_result):
+        pass  # Implement save to file logic

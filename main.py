@@ -7,7 +7,7 @@ class ConversionSimulatorGUI(tk.Tk):
 
         # initialize GUI
         self.title("CSARCH2 X22 Simulation Project")
-        self.geometry("600x400")
+        self.geometry("600x500")
 
         # Fixed window size
         self.resizable(width=False, height=False)
@@ -16,6 +16,7 @@ class ConversionSimulatorGUI(tk.Tk):
         self.create_widgets()
 
     def create_widgets(self):
+
         # main label
         label = tk.Label(self, text="Binary 64 Floating Point Converter", font=("Helvetica", 16))
         label.pack(pady=10)
@@ -25,15 +26,20 @@ class ConversionSimulatorGUI(tk.Tk):
         input_frame.pack(side=tk.LEFT, padx=10)
 
         # input label and box
-        cache_blocks_label = tk.Label(input_frame, text="Input:")
-        cache_blocks_label.pack()
-        self.cache_blocks_entry = tk.Entry(input_frame)
-        self.cache_blocks_entry.pack()
+        input_label = tk.Label(input_frame, text="Input:") #label
+        input_label.pack()
+        self.input_entry = tk.Entry(input_frame) #textbox
+        self.input_entry.pack()
+
+        tk.Label(input_frame).pack()  # Empty label for padding
 
         # checkbox for step-by-step simulation (Optional? -- idk if need natin pakita yung step-by-step tbh)
         self.step_by_step_var = tk.BooleanVar()
         step_by_step_checkbox = tk.Checkbutton(input_frame, text="Step-by-Step", variable=self.step_by_step_var)
         step_by_step_checkbox.pack()
+        
+        # Adding padding
+        tk.Label(input_frame).pack()  # Empty label for padding
 
         # convert button -- run simulation
         convert_button = tk.Button(input_frame, text="Convert", command=self.run_simulation)
@@ -47,19 +53,33 @@ class ConversionSimulatorGUI(tk.Tk):
         result_frame = tk.Frame(self)
         result_frame.pack(side=tk.RIGHT, padx=10)
 
-        # scrollbar for outputs
+        # Binary output
+        binary_output_label = tk.Label(result_frame, text="Binary:")
+        binary_output_label.pack()
+        
+        # Hexadecimal Output
+        hex_output_label = tk.Label(result_frame, text="Hexadecimal:")
+        hex_output_label.pack()
+
+        # scrollbar for outputs of step-by-step
         scrollbar = tk.Scrollbar(result_frame, orient=tk.VERTICAL)
         self.result_text = tk.Text(result_frame, height=20, width=55, yscrollcommand=scrollbar.set)
         scrollbar.config(command=self.result_text.yview)
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.result_text.pack()
 
+        tk.Label(result_frame).pack()  # Empty label for padding
+
+        # Print to Txt File output
+        save_button = tk.Button(result_frame, text="Save to File", command=self.save_to_file)
+        save_button.pack()
+
     def run_simulation(self):
         # Method to run the simulation
         self.result_text.delete(1.0, tk.END)  # Clear previous content
 
         # Get input and step-by-step value
-        test_case = self.cache_blocks_entry.get()
+        test_case = self.input_entry.get()
         step_by_step = self.step_by_step_var.get()
 
         # Initialize simulator
@@ -72,8 +92,11 @@ class ConversionSimulatorGUI(tk.Tk):
     def reset_display(self):
         # Method to reset the display
         self.result_text.delete(1.0, tk.END)
-        self.cache_blocks_entry.delete(0, tk.END)
-        self.cache_blocks_entry.focus()
+        self.input_entry.delete(0, tk.END)
+        self.input_entry.focus()
+
+    def save_to_file(self):
+        pass  # Implement save to file logic
 
 if __name__ == "__main__":
     # Run the GUI application
