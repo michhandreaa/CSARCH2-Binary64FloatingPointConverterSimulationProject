@@ -36,9 +36,11 @@ IEEE-754 Binary-64 floating point converter (including all special cases)
 - Screenshot of the program output
 - Brief Explanation of screenshot, input, and tutput: (1) binary output with space between section (2) its hexadecimal equivalent (3) with option to output in text file.
 
-#### Test Case 3: Special case _____ <add more as needed>
+#### Test Case 3: Special case _____
 - Screenshot of the program output (all possible test cases that will cover the specifications (normal, special case, different inputs, etc.)
 - Brief Explanation of screenshot, input, and tutput: (1) binary output with space between section (2) its hexadecimal equivalent (3) with option to output in text file.
+
+#### Test Case ... <add more as needed>
 
 #### Test Case N: None of the above (error catching)
 - Screenshot of the program output
