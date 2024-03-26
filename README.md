@@ -10,7 +10,7 @@
 ### Topic: 
 IEEE-754 Binary-64 floating point converter (including all special cases)
 - Input: (1) binary mantissa and base-2 (i.e., 101.01x25) (2) Decimal and base-10 (i.e. 65.0x103). Also should support special cases (i.e., NaN).
-• Output: (1) binary output with space between section (2) its hexadecimal equivalent (3) with option to output in text file.
+- Output: (1) binary output with space between section (2) its hexadecimal equivalent (3) with option to output in text file.
 
 ### Application platform:
 - Stand-alone with GUI (graphics user interface) using a library in python called tkinter
