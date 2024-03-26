@@ -1,9 +1,5 @@
 import tkinter as tk
-
-class ConversionSimulatorLogic:
-    def simulate(self, test_case, step_by_step):
-        # method to simulate the conversion process
-        pass  # Add logic for simulation
+from conversion import ConversionSimulatorLogic
 
 class ConversionSimulatorGUI(tk.Tk):
     def __init__(self):
@@ -70,14 +66,6 @@ class ConversionSimulatorGUI(tk.Tk):
         simulator = ConversionSimulatorLogic()
         simulator.simulate(test_case, step_by_step)
 
-        # Perform simulation based on step-by-step option
-        if step_by_step:
-            pass
-            # Add logic for step-by-step simulation
-        else:
-            pass
-            # Add logic for normal simulation
-        
         # Display simulation completion message
         self.result_text.insert(tk.END, "Simulation Completed!\n")
 
