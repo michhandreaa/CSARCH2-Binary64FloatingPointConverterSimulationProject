@@ -21,30 +21,41 @@ IEEE-754 Binary-64 floating point converter (including all special cases)
 ## Analysis Writeup:
 ### How to Run the Program:
 
-### Test cases:
-#### Test Case 1: binary mantissa and base-2
+#### Step 1: 
+Run .bat file for easier downloading of the libraries used and to run the app
+
+#### Step 2: Input the Test cases:
+##### Test Case 1: binary mantissa and base-2
 - Screenshot of the program output
-- Brief Explanation of screenshot, input, and tutput: (1) binary output with space between section (2) its hexadecimal equivalent (3) with option to output in text file.
-
-
-
-#### Test Case 2: Decimal and base-10 
+- Input:
+- Outputs:
+- Brief explanation of input and output:
+  
+##### Test Case 2: Decimal and base-10 
 - Screenshot of the program output
-- Brief Explanation
+- Input:
+- Outputs:
+- Brief explanation of input and output:
 
-#### Test Case 3: Special case NaN
+##### Test Case 3: Special case NaN
 - Screenshot of the program output
-- Brief Explanation of screenshot, input, and tutput: (1) binary output with space between section (2) its hexadecimal equivalent (3) with option to output in text file.
+- Input:
+- Outputs:
+- Brief explanation of input and output:
 
-#### Test Case 3: Special case _____
-- Screenshot of the program output (all possible test cases that will cover the specifications (normal, special case, different inputs, etc.)
-- Brief Explanation of screenshot, input, and tutput: (1) binary output with space between section (2) its hexadecimal equivalent (3) with option to output in text file.
-
-#### Test Case ... (add more as needed)
-
-#### Test Case N: None of the above (error catching)
+##### Test Case 4: Special case _____
 - Screenshot of the program output
-- Brief Explanation of screenshot, input, and tutput: (1) binary output with space between section (2) its hexadecimal equivalent (3) with option to output in text file.
+- Input:
+- Outputs:
+- Brief explanation of input and output:
+
+##### Test Case ... (add more as needed)
+
+##### Test Case N: None of the above (error catching)
+- Screenshot of the program output
+- Input:
+- Outputs:
+- Brief explanation of input and output:
   
 ### Key Takeaways:
 
