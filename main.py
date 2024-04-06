@@ -6,7 +6,7 @@ from conversion import ConversionSimulatorLogic
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\3515\Downloads\csarch2\CSARCH2-Binary64FloatingPointConverterSimulationProject\build\assets\frame0")
+ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\rombl\OneDrive - De La Salle University - Manila\CSARCH2\Simulation Project\CSARCH2-Binary64FloatingPointConverterSimulationProject\build\assets\frame0") # change to path in local folder
 
  # Defining function to convert relative path to absolute path
 def relative_to_assets(path: str) -> Path:
