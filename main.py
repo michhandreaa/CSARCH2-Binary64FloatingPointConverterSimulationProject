@@ -4,9 +4,8 @@ from PIL import Image, ImageTk
 from pathlib import Path
 from conversion import ConversionSimulatorLogic
 
-
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\3515\Downloads\csarch2\CSARCH2-Binary64FloatingPointConverterSimulationProject\build\assets\frame0")
+ASSETS_PATH = OUTPUT_PATH / Path(r"/Users/josh/Documents/COLLEGE/YEAR 3/CSARCH2/CSARCH2-Binary64FloatingPointConverterSimulationProject/build/assets/frame0")
 
  # Defining function to convert relative path to absolute path
 def relative_to_assets(path: str) -> Path:
