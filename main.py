@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import ttk
 from tkinter import Tk, Canvas, Entry, Text, Button, PhotoImage
 from PIL import Image, ImageTk
 from pathlib import Path
@@ -6,7 +7,7 @@ from conversion import ConversionSimulatorLogic
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\3515\Downloads\csarch2\CSARCH2-Binary64FloatingPointConverterSimulationProject\build\assets\frame0")
+ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\3515\Downloads\csarch2\CSARCH2-Binary64FloatingPointConverterSimulationProject")
 
  # Defining function to convert relative path to absolute path
 def relative_to_assets(path: str) -> Path:
@@ -50,32 +51,50 @@ class ConversionSimulatorGUI(tk.Tk):
         image_4 = canvas.create_image(300.0, 53.0, image=self.image_4)
 
         # left div - for inputs
-        input_frame = tk.Frame(self, bg='')  # Set background color to transparent
-        input_frame.pack(side=tk.LEFT, padx=25)
+        self.input_frame = tk.Frame(self, bg='')
+        self.input_frame.pack(side=tk.LEFT, padx=23)
+
+        # left div - for inputs (top part)
+        self.input_top_frame = tk.Frame(self.input_frame, bg='')  # Set background color to transparent
+        self.input_top_frame.pack(side=tk.TOP, padx=24, pady=30)
 
         # input label and box
-        input_label = tk.Label(input_frame, text="Input:")  # label
+        input_label = tk.Label(self.input_top_frame, text="Choose Input:") # label
         input_label.pack()
-        self.input_entry = tk.Entry(input_frame)  # textbox
-        self.input_entry.pack()
 
-        tk.Label(input_frame).pack()  # Empty label for padding
+        self.test_case_var = tk.StringVar(value="Binary") # default is binary
+        r1 = ttk.Radiobutton(self.input_top_frame, text='Binary', value='Binary', variable=self.test_case_var, command=self.show_entries)
+        r1.pack()
+        r2 = ttk.Radiobutton(self.input_top_frame, text='Decimal', value='Decimal', variable=self.test_case_var, command=self.show_entries)
+        r2.pack()
 
-        # checkbox for step-by-step simulation (Optional? -- idk if need natin pakita yung step-by-step tbh)
-        self.step_by_step_var = tk.BooleanVar()
-        step_by_step_checkbox = tk.Checkbutton(input_frame, text="Step-by-Step", variable=self.step_by_step_var)
-        step_by_step_checkbox.pack()
+        tk.Label(self.input_top_frame).pack()  # Empty label for padding
 
-        # Adding padding
-        tk.Label(input_frame).pack()  # Empty label for padding
+        # Binary entry fields
+        self.input_binary_entry = tk.Entry(self.input_top_frame, width=14)  
+        self.input_binary_entrytext = tk.Label(self.input_top_frame, text=" x 2^ ") 
+        self.input_exponent_binary_entry = tk.Entry(self.input_top_frame, width=7)  
 
-        # convert button -- run simulation
-        convert_button = tk.Button(input_frame, text="Convert", command=self.run_simulation)
-        convert_button.pack(side=tk.LEFT, padx=10)
+        self.input_binary_entry.pack(side=tk.TOP)
+        self.input_binary_entrytext.pack(side=tk.LEFT)
+        self.input_exponent_binary_entry.pack(side=tk.LEFT)
 
-        # reset button
-        reset_button = tk.Button(input_frame, text="Reset", command=self.reset_display)
-        reset_button.pack(side=tk.LEFT, padx=10)
+        # Decimal entry fields
+        self.input_decimal_entry = tk.Entry(self.input_top_frame, width=14)  
+        self.input_decimal_entrytext = tk.Label(self.input_top_frame, text=" x 10^ ") 
+        self.input_exponent_decimal_entry = tk.Entry(self.input_top_frame, width=7)  
+
+        # left div - for inputs (bottom part)
+        self.input_bottom_frame = tk.Frame(self.input_frame, bg='')  # Set background color to transparent
+        self.input_bottom_frame.pack(side=tk.BOTTOM, pady=10)
+
+        # Convert button -- run simulation
+        convert_button = tk.Button(self.input_bottom_frame, text="Convert", command=self.run_simulation)
+        convert_button.pack(side=tk.TOP, padx=10, pady=5)
+
+        # Reset button
+        reset_button = tk.Button(self.input_bottom_frame, text="Reset", command=self.reset_display)
+        reset_button.pack(side=tk.TOP, pady=5)
 
         # right div - for outputs
         result_frame = tk.Frame(self, bg='')  # Set background color to transparent
@@ -102,6 +121,29 @@ class ConversionSimulatorGUI(tk.Tk):
         save_button = tk.Button(result_frame, text="Save to File", command=self.save_to_file)
         save_button.pack()
 
+    def show_entries(self):
+
+        # Show or hide entry fields based on selected input type
+        if self.test_case_var.get() == "Binary":
+            self.input_binary_entry.pack(side=tk.TOP)
+            self.input_binary_entrytext.pack(side=tk.LEFT)
+            self.input_exponent_binary_entry.pack(side=tk.LEFT)
+
+            # Clear existing decimal entry widgets
+            self.input_decimal_entry.pack_forget()
+            self.input_decimal_entrytext.pack_forget()
+            self.input_exponent_decimal_entry.pack_forget()
+
+
+        elif self.test_case_var.get() == "Decimal":
+            self.input_decimal_entry.pack(side=tk.TOP)
+            self.input_decimal_entrytext.pack(side=tk.LEFT)
+            self.input_exponent_decimal_entry.pack(side=tk.LEFT)
+
+            # Clear existing binary entry widgets
+            self.input_binary_entry.pack_forget()
+            self.input_binary_entrytext.pack_forget()
+            self.input_exponent_binary_entry.pack_forget()
 
     def run_simulation(self):
         # Method to run the simulation
