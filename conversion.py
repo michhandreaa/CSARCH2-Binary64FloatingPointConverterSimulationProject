@@ -32,7 +32,7 @@ class ConversionSimulatorLogic:
 
         # TODO: Prepend the sign bit to the binary number
         signed_binary = sign_bit + binary_number
-        print(signed_binary)
+        return signed_binary
 
 
     def convert_to_hexadecimal(input_text, step_by_step=False):
