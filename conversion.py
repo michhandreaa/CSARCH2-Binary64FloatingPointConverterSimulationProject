@@ -5,7 +5,8 @@ class ConversionSimulatorLogic:
         # Implement binary conversion logic
 
     def convert_to_hexadecimal(input_text, step_by_step=False):
-        pass  # Implement hexadecimal conversion logic
+        return hex(int(input_text))
+    
     
     def converter64(mantissa, exponent):
         ### assuming binary input
@@ -36,8 +37,18 @@ class ConversionSimulatorLogic:
         f = mantissa[2:] # excludes 1.
         while len(f) < 53:
             f.append(0)
+            
+        binary_output = str(sign) + e_prime + f
         
-        return sign, e_prime, f
+        hex_output= hex(int(binary_output, 2))
+        
+        return {
+            "sign": sign,
+            "e_prime": e_prime,
+            "f": f,
+            "binary": binary_output,
+            "hexadecimal": hex_output
+        }
 
     def save_to_file(binary_result, hex_result):
         pass  # Implement save to file logic
