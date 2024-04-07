@@ -1,12 +1,12 @@
 # CSARCH2 X22 - Simulation Project
 
 ## Contents
-- [Introduction](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/edit/main/README.md#introduction)
-- [Video Demonstration](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/edit/main/README.md#video-demonstration)
-- [Test Cases](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/edit/main/README.md#test-cases)
-- [Source Code](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/edit/main/README.md#source-code)
-- [Analysis Writeup](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/edit/main/README.md#analysis-writeup)
-- [Key Takeaways](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/edit/main/README.md#key-takeaways)
+- [Introduction](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject?tab=readme-ov-file#introduction)
+- [Video Demonstration](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject?tab=readme-ov-filed#video-demonstration)
+- [Test Cases](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject?tab=readme-ov-file#test-cases)
+- [Source Code](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject?tab=readme-ov-file#source-code)
+- [Analysis Writeup](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject?tab=readme-ov-file#analysis-writeup)
+- [Key Takeaways](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject?tab=readme-ov-file#key-takeaways)
 
 ## Introduction
 
@@ -42,9 +42,13 @@ Try the app -- do different test cases
 Print the result
 
 ## Video Demonstration 
-  * insert github link redirecting to short video location - (Showing program compilation is correct and showing all test cases that will cover the specifications (normal, special case, different inputs, etc.)
+[Link to Video](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/)
+
+* insert github link redirecting to short video location - (Showing program compilation is correct and showing all test cases that will cover the specifications (normal, special case, different inputs, etc.)
 
 ## Test cases:
+[Link to screenshots](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/)
+
 ### Test Case 1: Positive binary mantissa and base-2
 - Screenshot of the program output
 - Input:
@@ -106,7 +110,9 @@ Print the result
 - Brief explanation of input and output:
 
 ## Source Code
+[Link to source code](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/)
 
 ## Analysis Writeup
-  
+[Link to analysis writeup](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/)
+
 ## Key Takeaways
