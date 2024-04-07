@@ -19,6 +19,8 @@ class ConversionSimulatorLogic:
         fraction = int(fraction) / 10 ** len(fraction)
 
         # TODO: Convert whole number to binary
+        whole_binary = bin(whole).lstrip("0b")
+        
         # TODO: Convert fraction number to binary
         binary_number = bin(whole).lstrip("0b") + "."
 
