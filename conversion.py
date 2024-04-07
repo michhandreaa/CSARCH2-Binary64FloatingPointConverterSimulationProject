@@ -1,3 +1,5 @@
+import math
+
 class ConversionSimulatorLogic:
     # assume correct decimal and exponent inputs
     def convert_to_binary(input_text):
@@ -34,6 +36,11 @@ class ConversionSimulatorLogic:
         signed_binary = sign_bit + binary_number
         return signed_binary
 
+    # Calculate the base-2 exponent using the change of base formula
+    def convert_base10_to_base2_exponent(base10_exponent):
+        base2_exponent = base10_exponent * math.log10(10) / math.log10(2)
+        result = round(base2_exponent)
+        return result
 
     def convert_to_hexadecimal(input_text, step_by_step=False):
         pass  # Implement hexadecimal conversion logic
