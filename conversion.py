@@ -66,13 +66,19 @@ class ConversionSimulatorLogic:
         converted_binary = converted_binary.replace("0b", "")
 # 
         return converted_binary
+    
+    # Convert decimal input from scientific notation to whole number (# x 10^0)
+    def descientific_decimal(decimal_whole, decimal_exponent):
+        descientify = float(decimal_whole) * (10**int(decimal_exponent))
+        
+        return descientify
 
 # DONE
     # Calculate the base-2 exponent using the change of base formula
     def convert_base10_to_base2_exponent(base10_exponent):
         
-        base2_exponent = int(base10_exponent) * math.log10(10) / math.log10(2)
-        converted_exponent = round(base2_exponent)
+        base2_exponent = int(base10_exponent) * math.log2(10)
+        converted_exponent = math.floor(base2_exponent)
 
         return converted_exponent
     

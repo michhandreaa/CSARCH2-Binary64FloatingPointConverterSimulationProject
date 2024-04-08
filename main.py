@@ -177,8 +177,12 @@ class ConversionSimulatorGUI(tk.Tk):
             # Convert to Binary
             if checkValid == True:
                 # Convert to Binary
-                binary_input = ConversionSimulatorLogic.convert_to_binary(decimal_input)
-                binary_exponent_input = ConversionSimulatorLogic.convert_base10_to_base2_exponent(decimal_exponent_input)
+                # binary_input = ConversionSimulatorLogic.convert_to_binary(decimal_input)
+                # binary_exponent_input = ConversionSimulatorLogic.convert_base10_to_base2_exponent(decimal_exponent_input)
+                
+                whole_decimal = str(ConversionSimulatorLogic.descientific_decimal(decimal_input, decimal_exponent_input))
+                binary_of_decimal = ConversionSimulatorLogic.convert_to_binary(whole_decimal)
+                binary_input, binary_exponent_input = ConversionSimulatorLogic.normalize(binary_of_decimal, 0)
 
                 self.result_text.insert(tk.END, "Binary:")
                 self.result_text.insert(tk.END, binary_input)
