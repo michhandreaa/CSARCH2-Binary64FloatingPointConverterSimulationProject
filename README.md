@@ -43,12 +43,9 @@ Try the app -- do different test cases
 Print the result
 
 ## Video Demonstration 
-[Link to Video](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/)
-
-* insert github link redirecting to short video location - (Showing program compilation is correct and showing all test cases that will cover the specifications (normal, special case, different inputs, etc.)
+[Link to Video](https://drive.google.com/file/d/1hfoP7QvlU_zyE_VCve2NixsC7xWBLO09/view?usp=sharing)
 
 ## Test cases:
-[Link to screenshots](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/)
 
 ### Test Case 1: Positive binary mantissa and base-2
 ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/9a4473ea-33fd-4f34-bf7f-c7c80ef212c5)
@@ -84,6 +81,5 @@ Print the result
 [Link to source code](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/)
 
 ## Analysis Writeup
-[Link to analysis writeup](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/)
 
 ## Key Takeaways
