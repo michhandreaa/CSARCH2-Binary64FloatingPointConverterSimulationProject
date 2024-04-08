@@ -86,7 +86,6 @@ class ConversionSimulatorLogic:
 # DONE
     def normalize(mantissa,  exponent):
         # ------------ NORMALIZE ------------
-
         exponent = int(exponent)
         new_mantissa = mantissa.replace('.', '')
         
@@ -118,7 +117,6 @@ class ConversionSimulatorLogic:
 
     ### assuming binary input
     def converter64(mantissa, exponent):
-
         mantissa = str(mantissa)
         exponent = int(exponent)
 
@@ -127,14 +125,23 @@ class ConversionSimulatorLogic:
         if mantissa[0] == '-':
             sign = 1
             mantissa = mantissa[1:] # removes (-) sign
-
         else:
             if mantissa[0] == '+':
                 mantissa = mantissa[1:] # removes (+) sign
             sign = 0
-
+        print(mantissa)
+        if ConversionSimulatorLogic.check_if_zero_input(mantissa):
+            if sign == 0:
+                e_prime = '0' * 11
+                f = '0' * 52
+                s_case = "Special Case: Positive Zero (+0)"
+                return str(sign), str(e_prime), str(f), s_case
+            else:
+                e_prime = '0' * 11
+                f = '0' * 52
+                s_case = "Special Case: Negative Zero (-0)"
+                return str(sign), str(e_prime), str(f), s_case
         # ------------ NORMALIZE ------------
-
         new_mantissa, exponent = ConversionSimulatorLogic.normalize(mantissa, exponent)
         # print(f"{new_mantissa} {exponent}")
 
@@ -221,7 +228,11 @@ class ConversionSimulatorLogic:
         fraction = '0' * pre_pending_zeroes + '1' + normalized_input[2:].lstrip('0')
 
         current_len = 12 + len(fraction)
-        fraction = fraction.ljust(64, '0')
+        fraction = fraction.ljust(52, '0')
 
         # print(sign_bit, exponent, fraction)
         return sign_bit, exponent, fraction
+
+    def check_if_zero_input(mantissa):
+        epsilon = 1e-10
+        return abs(float(mantissa)) < epsilon
