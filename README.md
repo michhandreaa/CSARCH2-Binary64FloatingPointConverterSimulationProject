@@ -51,13 +51,13 @@ Print the result
 ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/9a4473ea-33fd-4f34-bf7f-c7c80ef212c5)
 
 ### Test Case 2: Negative binary mantissa and base-2
-  ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/b2cb8e42-3a8a-471e-b0d3-f061870d16e3)
+![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/b2cb8e42-3a8a-471e-b0d3-f061870d16e3)
   
 ### Test Case 3: Positive decimal and base-10 
- ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/797395d5-ac33-49c3-bf4e-c05e876cae54)
+![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/797395d5-ac33-49c3-bf4e-c05e876cae54)
 
 ### Test Case 4: Negative decimal and base-10 
-  ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/4af3a853-6686-43bd-b241-d9854f7a31e4)
+![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/d0dac2f9-4b89-4559-9ffb-15fd4b03b198)
 
 ### Test Case 5:  Binary Positive 0 
 ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/9fc119df-35c2-4dba-b9df-9406aa8e5bab)
@@ -71,10 +71,19 @@ Print the result
 ### Test Case 8:  Decimal Negative 0 
 ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/8e112ac0-66f0-4dc6-893c-ad773e764135)
 
-
-
 ## Source Code
 [Link to source code](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/)
 
 ## Analysis Writeup
-
+1. <b>Error-catching different ways of writing positive numbers.</b>
+- Although it sounds simple enough, one of the challenges that the team encountered while creating the app was the many different ways a user can write positive numbers. Thankfully, this problem was caught during the testing phase and solved by integrating it into the current data validation conditions.
+2. <b>Implementing special cases</b>
+- The hardest part that the team encountered was the implementation of special cases, although they may sound simple enough, given that these are values that have their own specific format. For some reason, it was difficult to catch these cases when we were following the process of converting to IEEE-754 Binary-64 format.
+3. <b>Converting Decimal fractions to Binary</b>
+- Another problem that the team encountered while creating the project was the proper way of converting decimal fractions to binary. During initial testing of the conversion, it seemed that the fraction converted correctly but looped multiple times. We tried converting the mantissa and the decimal exponent separately first, but this gave inaccurate results. Instead, we decided to transform the given decimal input so that the exponent in the scientific notation becomes 0, and this number will then be converted to binary and finally normalized.
+4. <b>Converting Decimal exponent 10^n to its equivalent binary exponent 2<sup>m</sup></b>
+- The team was also challenged to convert the decimal exponent directly to its equivalent binary exponent. The team searched different math and CS forums for a formula, but most were derivations that resulted in an approximation. It would’ve been fine, given that the approximations were more or less close enough to the actual exact supposed conversion. Sadly, it greatly affected the answer, and thus, the team had to look for a more concrete solution, which ended up converting the whole thing into binary instead and then normalizing the result.
+5. <b>Radio buttons using Tkinder</b>
+- During the creation of the GUI, there was an agreement regarding the use of radio buttons to choose between binary and decimal input and how their respective text boxes and text must appear depending on which was clicked. This proved to be a bit tricky to implement since Tkinter was an old GUI library and wasn’t really intuitive.
+6. <b>Implementing the normalization function</b>
+- In implementing the normalization function, the group experienced a problem getting the expected exponent, as there were instances wherein the exponent outputs were lacking or in excess of 1. However, the team was able to resolve this issue through a bit of tinkering and analyzing. 
