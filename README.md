@@ -68,7 +68,7 @@ Print the result
 ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/053e1060-71a1-4be2-b4f6-0405827dee2b)
 
 ### Test Case 8:  Decimal Negative 0 
-![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/8e112ac0-66f0-4dc6-893c-ad773e764135)
+![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/de674024-bb29-4434-b068-1fb3becd4a3a)
 
 ## Source Code
 [Link to source code](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/)
