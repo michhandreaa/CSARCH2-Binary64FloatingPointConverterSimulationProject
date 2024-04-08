@@ -159,8 +159,8 @@ class ConversionSimulatorGUI(tk.Tk):
                 self. result_text.insert(tk.END, " x 2^ ")
                 self.result_text.insert(tk.END, binary_exponent_input)   
                            
-            #     # convert to IEEE-754 rep
-            #     converted_IEEE = ConversionSimulatorLogic.converter64(binary_input, binary_exponent_input)
+                # convert to IEEE-754 rep
+                sign, e_prime, f = ConversionSimulatorLogic.converter64(binary_input, binary_exponent_input)
                 
             #     # Convert to Hex
             #     converted_hex = ConversionSimulatorLogic.convert_to_hexadecimal(converted_IEEE)
@@ -185,20 +185,23 @@ class ConversionSimulatorGUI(tk.Tk):
                 self. result_text.insert(tk.END, " x 2^ ")
                 self.result_text.insert(tk.END, binary_exponent_input)
                 
-                # # convert to IEEE-754 rep
-                # converted_IEEE = ConversionSimulatorLogic.converter64(binary_input, binary_exponent_input)
-
+                # convert to IEEE-754 rep
+                sign, e_prime, f = ConversionSimulatorLogic.converter64(binary_input, binary_exponent_input)
                 
                 # # Convert to Hex
                 # converted_hex = ConversionSimulatorLogic.convert_to_hexadecimal(converted_IEEE)
 
-        # self.result_text.insert(tk.END, "\nIEEE-754 Representation:")
-        # self.result_text.insert(tk.END, converted_IEEE)
+        self.result_text.insert(tk.END, "\n\nIEEE-754 Representation:\n")
+        self.result_text.insert(tk.END, sign)
+        self.result_text.insert(tk.END, " ")
+        self.result_text.insert(tk.END, e_prime)
+        self.result_text.insert(tk.END, " ")
+        self.result_text.insert(tk.END, f)
 
         # self.result_text.insert(tk.END, "\nHexadecimal:")
         # self.result_text.insert(tk.END, converted_hex)
 
-        self.result_text.insert(tk.END, "\nSimulation Completed!\n")
+        self.result_text.insert(tk.END, "\n\nSimulation Completed!\n")
 
     def reset_display(self):
         # Method to reset the display

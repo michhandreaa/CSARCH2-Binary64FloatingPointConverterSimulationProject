@@ -28,20 +28,23 @@ class ConversionSimulatorLogic:
             return False
         
         return True
-    
+
     # assume correct decimal and exponent inputs
     def convert_to_binary(input_text):
 
-        if input_text.count('.') == 1: # if inputted text has BOTH whole and fraction
-        # TODO: Separate whole number from fraction
+        if input_text.count('.') == 1: # if inputted text has BOTH whole and fraction    
+            # TODO: Separate whole number from fraction
             whole, fraction = str(input_text).split(".")
+            fraction_size_limit = 52-(len(whole)-1)
+            cnt = 0
             whole = int(whole)
             fraction = int(fraction) / 10 ** len(fraction)
 
             # TODO: Convert fraction number to binary
             converted_binary = bin(whole).lstrip("0b") + "."
 
-            while fraction != 0:
+            while fraction != 0 and cnt <= fraction_size_limit:
+
                 # print(binary_number, fraction)
                 fraction = fraction * 2
                 if fraction >= 1:
@@ -49,6 +52,8 @@ class ConversionSimulatorLogic:
                     converted_binary = converted_binary + "1"
                 else:
                     converted_binary = converted_binary + "0"
+            
+            cnt += 1
 
         elif input_text.count('.') == 0: # if inputted text only has whole
             whole = int(input_text)
@@ -71,23 +76,11 @@ class ConversionSimulatorLogic:
 
         return converted_exponent
     
-    ### assuming binary input
-    def converter64(mantissa, exponent):
 
-        mantissa = str(mantissa)
-        exponent = int(exponent)
-
-        # ------------ SIGN BIT ------------
-        # mantissa and exponent are str
-        if mantissa[0] == '-':
-            sign = 1
-            mantissa.pop(0) # removes (-) sign
-        else:
-            if mantissa[0] == '+':
-                mantissa.pop(0) # removes (-) sign
-            sign = 0
-
+    def normalize(mantissa,  exponent):
         # ------------ NORMALIZE ------------
+
+        new_mantissa = ""
 
         # Step 1: Look for '.'
         dot_index = mantissa.find('.')
@@ -98,7 +91,6 @@ class ConversionSimulatorLogic:
 
         # Step 2: Check if '1.' is in the leftmost part of the string
         if not mantissa.startswith('1.'):
-            new_mantissa = ""
             found_target = False
             
             whole, fraction = str(mantissa).split(".")
@@ -132,6 +124,30 @@ class ConversionSimulatorLogic:
                         # Step 4a: If new "." was inserted in fraction, subtract 
                         exponent = (dot_index-index) - exponent
                         found_target = True
+
+        return new_mantissa, exponent
+
+
+    ### assuming binary input
+    def converter64(mantissa, exponent):
+
+        mantissa = str(mantissa)
+        exponent = int(exponent)
+
+        # ------------ SIGN BIT ------------
+        # mantissa and exponent are str
+        if mantissa[0] == '-':
+            sign = 1
+            mantissa = mantissa[1:] # removes (-) sign
+
+        else:
+            if mantissa[0] == '+':
+                mantissa = mantissa[1:] # removes (+) sign
+            sign = 0
+
+        # ------------ NORMALIZE ------------
+
+        new_mantissa, exponent = ConversionSimulatorLogic.normalize(mantissa, exponent)
         
         # ------------ e' ------------ 
         # e' (11 bits)
@@ -141,20 +157,15 @@ class ConversionSimulatorLogic:
         
         # ------------ f ------------
         # f (52 bits)
-        f = []
+        f = new_mantissa.replace('.', '')  # Remove '.' from mantissa
         f = new_mantissa[2:] # excludes 1.
-        while len(f) < 53:
-            f.append(0)
+        f = f.ljust(52, '0')  # Right-pad with zeros to make it 52 bits
             
         binary_output = str(sign) + e_prime + f
         
         hex_output= hex(int(binary_output, 2))
         
-        return {
-            "sign": sign,
-            "e_prime": e_prime,
-            "f": f,
-        }
+        return sign, e_prime, f
 
     def convert_to_hexadecimal(input_text, step_by_step=False):
         pass  # Implement hexadecimal conversion logic
