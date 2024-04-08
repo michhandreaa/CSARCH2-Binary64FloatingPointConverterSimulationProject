@@ -60,8 +60,10 @@ Print the result
   ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/4af3a853-6686-43bd-b241-d9854f7a31e4)
 
 ### Test Case 5:  Binary Positive 0 
+![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/9fc119df-35c2-4dba-b9df-9406aa8e5bab)
 
 ### Test Case 6:  Binary Negative 0 
+![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/38d58bed-d88a-4892-b319-4f3f7f114c35)
 
 ### Test Case 7:  Decimal Positive 0 
 
