@@ -145,6 +145,8 @@ class ConversionSimulatorGUI(tk.Tk):
             self.input_exponent_binary_entry.pack_forget()
 
 
+# LOGIC SKELETON -- LOGIC FUNCTIONS ARE IN CONVERSION.PY
+
     def run_simulation(self):
         # Method to run the simulation
         self.result_text.delete(1.0, tk.END)  # Clear previous content
@@ -156,7 +158,9 @@ class ConversionSimulatorGUI(tk.Tk):
             binary_exponent_input = self.input_exponent_binary_entry.get()
 
             # Call validateInput from conversion.py
-            simulator = ConversionSimulatorLogic.validateInput(binary_input, binary_exponent_input, self.test_case_var.get(), self.result_text)
+            checkValid = ConversionSimulatorLogic.validateInput(binary_input, binary_exponent_input, self.test_case_var.get(), self.result_text)
+
+            # Convert to Hex
 
         elif self.test_case_var.get() == "Decimal":
             # Fetch decimal input values
@@ -164,9 +168,15 @@ class ConversionSimulatorGUI(tk.Tk):
             decimal_exponent_input = self.input_exponent_decimal_entry.get()
 
             # Call validateInput from conversion.py
-            simulator = ConversionSimulatorLogic.validateInput(decimal_input, decimal_exponent_input, self.test_case_var, self.result_text)
+            checkValid = ConversionSimulatorLogic.validateInput(decimal_input, decimal_exponent_input, self.test_case_var, self.result_text)
 
-        # Display simulation completion message
+            # Convert to Binary
+            if checkValid == True:
+                converted_binary = ConversionSimulatorLogic.convert_to_binary(decimal_input)
+                converted_exponent = ConversionSimulatorLogic.convert_base10_to_base2_exponent(decimal_exponent_input)
+
+            # Convert to Hex
+
         self.result_text.insert(tk.END, "\nSimulation Completed!\n")
 
     def reset_display(self):
