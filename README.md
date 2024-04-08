@@ -98,7 +98,41 @@ Print the result
    - Hexadecimal Representation: 0xC18528DEC0000000
 - Brief explanation of input and output:
 
-### Test Case 5: Special case zero
+### Test Case 5:  Binary Positive 0 
+- Screenshot of the program output
+
+- Input: 
+- Outputs:
+   - Sign: 
+   - Exponent Representation: 
+   - Mantissa:
+   - Binary Representation: 
+   - Hexadecimal Representation: 
+- Brief explanation of input and output:
+
+### Test Case 6:  Binary Negative 0 
+- Screenshot of the program output
+- Input: 
+- Outputs:
+   - Sign: 
+   - Exponent Representation: 
+   - Mantissa:
+   - Binary Representation: 
+   - Hexadecimal Representation: 
+- Brief explanation of input and output:
+
+### Test Case 7:  Decimal Positive 0 
+- Screenshot of the program output
+- Input: 
+- Outputs:
+   - Sign: 
+   - Exponent Representation: 
+   - Mantissa:
+   - Binary Representation: 
+   - Hexadecimal Representation: 
+- Brief explanation of input and output:
+
+### Test Case 8:  Decimal Negative 0 
 - Screenshot of the program output
 - Input: 
 - Outputs:
