@@ -55,9 +55,9 @@ Print the result
 - Input: 1.00111x2<sup>5</sup>
 - Outputs:
    - Sign: 0
-   - Exponent Representation: 1000000100
-   - Mantissa: 0011100000000000000000000000000000000000000000000000
-   - Binary Representation: 0100 0000 0100 0011 1000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
+   - Exponent Representation: 100 000 00001
+   - Mantissa: 0011 1000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
+   - Binary Representation: 0b0100 0000 0100 0011 1000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
    - Hexadecimal Representation: 0x4043800000000000
     
 - Brief explanation of input and output:
@@ -65,58 +65,103 @@ Print the result
 ### Test Case 2: Negative binary mantissa and base-2
 - Screenshot of the program output
   ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/b2cb8e42-3a8a-471e-b0d3-f061870d16e3)
-- Input:
+- Input: -10000.0001x2<sup>4</sup>
 - Outputs:
+   - Sign: 1
+   - Exponent Representation: 100 0000 0111
+   - Mantissa: 0000 0001 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
+   - Binary Representation: 0b1100 0000 0111 0000 0001 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
+   - Hexadecimal Representation: 0xC070100000000000
 - Brief explanation of input and output:
   
 ### Test Case 3: Positive decimal and base-10 
 - Screenshot of the program output
  ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/797395d5-ac33-49c3-bf4e-c05e876cae54)
-- Input:
+- Input: 65.0x10<sup>3</sup>
 - Outputs:
+   - Sign: 0
+   - Exponent Representation: 100 0000 1110
+   - Mantissa: 1111 1011 1101 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
+   - Binary Representation: 0b0100 0000 1110 1111 1011 1101 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
+   - Hexadecimal Representation: 0x40EFBD0000000000
 - Brief explanation of input and output:
 
 ### Test Case 4: Negative decimal and base-10 
 - Screenshot of the program output
   ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/4af3a853-6686-43bd-b241-d9854f7a31e4)
-- Input:
+- Input: -88.75x10<sup>6</sup>
 - Outputs:
+   - Sign: 1
+   - Exponent Representation: 100 0001 1000
+   - Mantissa: 0101 0010 1000 1101 1110 1100 0000 0000 0000 0000 0000 0000 0000
+   - Binary Representation: 0b1100 0001 1000 0101 0010 1000 1101 1110 1100 0000 0000 0000 0000 0000 0000 0000
+   - Hexadecimal Representation: 0xC18528DEC0000000
 - Brief explanation of input and output:
 
 ### Test Case 5: Special case zero
 - Screenshot of the program output
-- Input:
+- Input: 
 - Outputs:
+   - Sign: 
+   - Exponent Representation: 
+   - Mantissa:
+   - Binary Representation: 
+   - Hexadecimal Representation: 
 - Brief explanation of input and output:
 
 ### Test Case 6: Special case infinity
 - Screenshot of the program output
-- Input:
+- Input: 
 - Outputs:
+   - Sign: 
+   - Exponent Representation: 
+   - Mantissa:
+   - Binary Representation: 
+   - Hexadecimal Representation: 
 - Brief explanation of input and output:
 
 ### Test Case 7: Special case denormalized
 - Screenshot of the program output
-- Input:
+- Input: 
 - Outputs:
+   - Sign: 
+   - Exponent Representation: 
+   - Mantissa:
+   - Binary Representation: 
+   - Hexadecimal Representation: 
 - Brief explanation of input and output:
 
 ### Test Case 8: Special case SNaN
 - Screenshot of the program output
-- Input:
+- Input: 
 - Outputs:
+   - Sign: 
+   - Exponent Representation: 
+   - Mantissa:
+   - Binary Representation: 
+   - Hexadecimal Representation: 
 - Brief explanation of input and output:
 
 ### Test Case 9: Special case QNaN
 - Screenshot of the program output
-- Input:
+- Input: 
 - Outputs:
+   - Sign: 
+   - Exponent Representation: 
+   - Mantissa:
+   - Binary Representation: 
+   - Hexadecimal Representation: 
 - Brief explanation of input and output:
   
 ### Test Case 10: None of the above (error catching)
 - Screenshot of the program output
-- Input:
+- Input: 
 - Outputs:
+   - Sign: 
+   - Exponent Representation: 
+   - Mantissa:
+   - Binary Representation: 
+   - Hexadecimal Representation: 
 - Brief explanation of input and output:
 
 ## Source Code
