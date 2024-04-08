@@ -99,17 +99,9 @@ class ConversionSimulatorGUI(tk.Tk):
         result_frame = tk.Frame(self, bg='')  # Set background color to transparent
         result_frame.pack(side=tk.RIGHT, padx=20)
 
-        # Binary output
-        binary_output_label = tk.Label(result_frame, text="Binary:")
-        binary_output_label.pack()
-
-        # Hexadecimal Output
-        hex_output_label = tk.Label(result_frame, text="Hexadecimal:")
-        hex_output_label.pack()
-
         # scrollbar for outputs of step-by-step
         scrollbar = tk.Scrollbar(result_frame, orient=tk.VERTICAL)
-        self.result_text = tk.Text(result_frame, height=17, width=45, yscrollcommand=scrollbar.set)
+        self.result_text = tk.Text(result_frame, height=20, width=45, yscrollcommand=scrollbar.set)
         scrollbar.config(command=self.result_text.yview)
         scrollbar.pack(side=tk.RIGHT, fill=tk.Y)
         self.result_text.pack()
@@ -160,7 +152,19 @@ class ConversionSimulatorGUI(tk.Tk):
             # Call validateInput from conversion.py
             checkValid = ConversionSimulatorLogic.validateInput(binary_input, binary_exponent_input, self.test_case_var.get(), self.result_text)
 
-            # Convert to Hex
+            if checkValid == True:      
+
+                self.result_text.insert(tk.END, "Binary:")
+                self.result_text.insert(tk.END, binary_input)
+                self. result_text.insert(tk.END, " x 2^ ")
+                self.result_text.insert(tk.END, binary_exponent_input)   
+                           
+            #     # convert to IEEE-754 rep
+            #     converted_IEEE = ConversionSimulatorLogic.converter64(binary_input, binary_exponent_input)
+                
+            #     # Convert to Hex
+            #     converted_hex = ConversionSimulatorLogic.convert_to_hexadecimal(converted_IEEE)
+
 
         elif self.test_case_var.get() == "Decimal":
             # Fetch decimal input values
@@ -172,10 +176,27 @@ class ConversionSimulatorGUI(tk.Tk):
 
             # Convert to Binary
             if checkValid == True:
-                converted_binary = ConversionSimulatorLogic.convert_to_binary(decimal_input)
-                converted_exponent = ConversionSimulatorLogic.convert_base10_to_base2_exponent(decimal_exponent_input)
+                # Convert to Binary
+                binary_input = ConversionSimulatorLogic.convert_to_binary(decimal_input)
+                binary_exponent_input = ConversionSimulatorLogic.convert_base10_to_base2_exponent(decimal_exponent_input)
 
-            # Convert to Hex
+                self.result_text.insert(tk.END, "Binary:")
+                self.result_text.insert(tk.END, binary_input)
+                self. result_text.insert(tk.END, " x 2^ ")
+                self.result_text.insert(tk.END, binary_exponent_input)
+                
+                # # convert to IEEE-754 rep
+                # converted_IEEE = ConversionSimulatorLogic.converter64(binary_input, binary_exponent_input)
+
+                
+                # # Convert to Hex
+                # converted_hex = ConversionSimulatorLogic.convert_to_hexadecimal(converted_IEEE)
+
+        # self.result_text.insert(tk.END, "\nIEEE-754 Representation:")
+        # self.result_text.insert(tk.END, converted_IEEE)
+
+        # self.result_text.insert(tk.END, "\nHexadecimal:")
+        # self.result_text.insert(tk.END, converted_hex)
 
         self.result_text.insert(tk.END, "\nSimulation Completed!\n")
 
