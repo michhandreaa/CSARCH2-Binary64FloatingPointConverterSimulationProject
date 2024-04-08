@@ -6,7 +6,6 @@
 - [Test Cases](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject?tab=readme-ov-file#test-cases)
 - [Source Code](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject?tab=readme-ov-file#source-code)
 - [Analysis Writeup](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject?tab=readme-ov-file#analysis-writeup)
-- [Key Takeaways](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject?tab=readme-ov-file#key-takeaways)
 
 ## Introduction
 
