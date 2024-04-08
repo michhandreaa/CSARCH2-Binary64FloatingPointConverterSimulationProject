@@ -4,14 +4,14 @@ import math
 # LOGIC FUNCTIONS -- LOGIC SKELETON IS DEF RUN_SIMULATION IN MAIN.PY
 class ConversionSimulatorLogic:
 
-    # DONE
+# DONE
     def is_float(input_string, exponent_string):  # checking if input is numeric after removing . and exponent is numeric
         if input_string.replace(".", "").isnumeric() and exponent_string.isnumeric():
             return True
         else:
             return False
 
-    # DONE
+# DONE
     def validateInput(input_text, exponent, type, result_text):  # checking if input is positive or negative and if is_float
 
         if str(input_text)[0] == "+" or str(input_text)[0] == "-":
@@ -32,16 +32,6 @@ class ConversionSimulatorLogic:
     # assume correct decimal and exponent inputs
     def convert_to_binary(input_text):
 
-        # TODO: Get Sign Bit and remove from input string
-        if str(input_text)[0] == '+' or str(input_text)[0] == '-':
-            if str(input_text)[0] == '-':
-                sign_bit = "1"
-            else:
-                sign_bit = "0"
-            input_text = input_text[1:]
-        else:
-            sign_bit = "0"
-
         if input_text.count('.') == 1: # if inputted text has BOTH whole and fraction
         # TODO: Separate whole number from fraction
             whole, fraction = str(input_text).split(".")
@@ -49,26 +39,30 @@ class ConversionSimulatorLogic:
             fraction = int(fraction) / 10 ** len(fraction)
 
             # TODO: Convert fraction number to binary
-            binary_number = bin(whole).lstrip("0b") + "."
+            converted_binary = bin(whole).lstrip("0b") + "."
 
             while fraction != 0:
                 # print(binary_number, fraction)
                 fraction = fraction * 2
                 if fraction >= 1:
                     fraction = fraction - 1
-                    binary_number = binary_number + "1"
+                    converted_binary = converted_binary + "1"
                 else:
-                    binary_number = binary_number + "0"
+                    converted_binary = converted_binary + "0"
 
         elif input_text.count('.') == 0: # if inputted text only has whole
             whole = int(input_text)
-            binary_number = "0"
+            converted_binary = "0"
 
-        # TODO: Prepend the sign bit to the binary number
-        converted_binary = sign_bit + binary_number
+        # # TODO: Prepend the sign bit to the binary number
+        # converted_binary = sign_bit + binary_number
 
+        # Remove "0b" prefix if present
+        converted_binary = converted_binary.replace("0b", "")
+# 
         return converted_binary
 
+# DONE
     # Calculate the base-2 exponent using the change of base formula
     def convert_base10_to_base2_exponent(base10_exponent):
         
@@ -77,7 +71,90 @@ class ConversionSimulatorLogic:
 
         return converted_exponent
     
-    
+    ### assuming binary input
+    def converter64(mantissa, exponent):
+
+        mantissa = str(mantissa)
+        exponent = int(exponent)
+
+        # ------------ SIGN BIT ------------
+        # mantissa and exponent are str
+        if mantissa[0] == '-':
+            sign = 1
+            mantissa.pop(0) # removes (-) sign
+        else:
+            if mantissa[0] == '+':
+                mantissa.pop(0) # removes (-) sign
+            sign = 0
+
+        # ------------ NORMALIZE ------------
+
+        # Step 1: Look for '.'
+        dot_index = mantissa.find('.')
+
+        # If no '.', add one to the right most part of the string
+        if '.' not in mantissa:
+            mantissa += '.'
+
+        # Step 2: Check if '1.' is in the leftmost part of the string
+        if not mantissa.startswith('1.'):
+            new_mantissa = ""
+            found_target = False
+            
+            whole, fraction = str(mantissa).split(".")
+
+            mantissa = whole + fraction
+            
+            ''' Step 3a: check if there is a '1" anywhere on left side portion of current whole part.
+                        if there is, iterate through each char until encounter FIRST "1" then insert a "."
+            '''            
+            for index, one in enumerate(whole):
+                #check left:
+                new_mantissa += one 
+                if one == "1" and not found_target:
+                    new_mantissa += "."
+                    found_target = True
+
+            if found_target == True:
+                new_mantissa = new_mantissa+fraction
+
+            # Step 4a: If new "." was inserted to whole, add 
+            exponent = (dot_index-index) + exponent
+            
+            ''' Step 3b: check if there is a '1" anywhere on right side portion of current fraction part.
+                        if there is, iterate through each char until encounter FIRST "1" then insert a "."
+            '''     
+            if not found_target:
+                for index, one in enumerate(fraction):
+                    new_mantissa += one
+                    if one == "1" and not found_target:
+                        new_mantissa += "."
+                        # Step 4a: If new "." was inserted in fraction, subtract 
+                        exponent = (dot_index-index) - exponent
+                        found_target = True
+        
+        # ------------ e' ------------ 
+        # e' (11 bits)
+        e_prime = exponent + 1023
+        # convert e_prime to binary
+        e_prime = bin(e_prime)[2:].zfill(11)
+        
+        # ------------ f ------------
+        # f (52 bits)
+        f = []
+        f = new_mantissa[2:] # excludes 1.
+        while len(f) < 53:
+            f.append(0)
+            
+        binary_output = str(sign) + e_prime + f
+        
+        hex_output= hex(int(binary_output, 2))
+        
+        return {
+            "sign": sign,
+            "e_prime": e_prime,
+            "f": f,
+        }
 
     def convert_to_hexadecimal(input_text, step_by_step=False):
         pass  # Implement hexadecimal conversion logic
