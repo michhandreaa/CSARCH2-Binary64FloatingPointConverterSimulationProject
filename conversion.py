@@ -136,11 +136,12 @@ class ConversionSimulatorLogic:
         # ------------ NORMALIZE ------------
 
         new_mantissa, exponent = ConversionSimulatorLogic.normalize(mantissa, exponent)
+        # print(f"{new_mantissa} {exponent}")
 
         # ------------ DENORMALIZE ------------
 
         if exponent < -1022:
-            sign, e_prime, f = ConversionSimulatorLogic.denormalize_special(mantissa)
+            sign, e_prime, f = ConversionSimulatorLogic.denormalize_special(mantissa, exponent)
             s_case = "Special Case: Denormalized"
         else:
             # ------------ e' ------------
@@ -211,13 +212,16 @@ class ConversionSimulatorLogic:
         
         return s_case
 
-    def denormalize_special(normalized_input):
+    def denormalize_special(normalized_input, old_exponent):
         sign_bit = normalized_input[0]
 
         exponent = '0' * 11
 
-        fraction = '1' + normalized_input[2:].lstrip('0')
+        pre_pending_zeroes = abs(1022 + old_exponent) - 1
+        fraction = '0' * pre_pending_zeroes + '1' + normalized_input[2:].lstrip('0')
 
-        fraction = fraction.ljust(52, '0')
+        current_len = 12 + len(fraction)
+        fraction = fraction.ljust(64, '0')
 
+        # print(sign_bit, exponent, fraction)
         return sign_bit, exponent, fraction
