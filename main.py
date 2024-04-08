@@ -160,7 +160,7 @@ class ConversionSimulatorGUI(tk.Tk):
                 self.result_text.insert(tk.END, binary_input)
                 self. result_text.insert(tk.END, " x 2^ ")
                 self.result_text.insert(tk.END, binary_exponent_input)   
-                           
+                
                 # convert to IEEE-754 rep
                 sign, e_prime, f = ConversionSimulatorLogic.converter64(binary_input, binary_exponent_input)
                 converted_IEEE = sign + e_prime + f
@@ -179,10 +179,7 @@ class ConversionSimulatorGUI(tk.Tk):
 
             # Convert to Binary
             if checkValid == True:
-                # Convert to Binary
-                # binary_input = ConversionSimulatorLogic.convert_to_binary(decimal_input)
-                # binary_exponent_input = ConversionSimulatorLogic.convert_base10_to_base2_exponent(decimal_exponent_input)
-                
+                # Convert to Binary                
                 whole_decimal = str(ConversionSimulatorLogic.descientific_decimal(decimal_input, decimal_exponent_input))
                 binary_of_decimal = ConversionSimulatorLogic.convert_to_binary(whole_decimal)
                 binary_input, binary_exponent_input = ConversionSimulatorLogic.normalize(binary_of_decimal, 0)

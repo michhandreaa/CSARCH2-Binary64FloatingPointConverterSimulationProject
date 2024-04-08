@@ -66,10 +66,12 @@ class ConversionSimulatorLogic:
         converted_binary = converted_binary.replace("0b", "")
 # 
         return converted_binary
-    
+
+# DONE    
     # Convert decimal input from scientific notation to whole number (# x 10^0)
     def descientific_decimal(decimal_whole, decimal_exponent):
         descientify = float(decimal_whole) * (10**int(decimal_exponent))
+        print("descientify=", descientify)
         
         return descientify
 
@@ -98,6 +100,7 @@ class ConversionSimulatorLogic:
         #Adjust the exponent based on the movement of the decimal point
         if mantissa[0] == '-':
             dot_index = mantissa.find('.') - 1
+            exponent += 1
             
         else:
             dot_index = mantissa.find('.')
