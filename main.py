@@ -181,9 +181,9 @@ class ConversionSimulatorGUI(tk.Tk):
                 binary_input = ConversionSimulatorLogic.convert_to_binary(decimal_input)
                 binary_exponent_input = ConversionSimulatorLogic.convert_base10_to_base2_exponent(decimal_exponent_input)
 
-                self.result_text.insert(tk.END, "Binary:")
+                self.result_text.insert(tk.END, "\nBinary:")
                 self.result_text.insert(tk.END, binary_input)
-                self. result_text.insert(tk.END, " x 2^ ")
+                self. result_text.insert(tk.END, " x 2^")
                 self.result_text.insert(tk.END, binary_exponent_input)
                 
                 # convert to IEEE-754 rep
@@ -200,7 +200,7 @@ class ConversionSimulatorGUI(tk.Tk):
         self.result_text.insert(tk.END, " ")
         self.result_text.insert(tk.END, f)
 
-        self.result_text.insert(tk.END, "\n\nHexadecimal:")
+        self.result_text.insert(tk.END, "\n\nIEEE-754 Hexadecimal Representation:\n")
         self.result_text.insert(tk.END, converted_hex)
 
         self.result_text.insert(tk.END, "\n\nSimulation Completed!\n")

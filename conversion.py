@@ -140,8 +140,25 @@ class ConversionSimulatorLogic:
                         
         return str(sign), str(e_prime), str(f)
 
-    def convert_to_hexadecimal(input_text, step_by_step=False):
-        pass  # Implement hexadecimal conversion logic
+    def convert_to_hexadecimal(input_text):
+
+        # Initialize an empty string to store the hexadecimal result
+        hex_result = ''
+
+        for i in range(len(input_text) // 4):
+            # Extract a group of four binary digits
+            group = input_text[-4:]
+            
+            # Convert the group to its corresponding hexadecimal digit
+            hex_digit = hex(int(group, 2))[2:].upper()
+            
+            # Prepend the hexadecimal digit to the result
+            hex_result = hex_digit + hex_result
+            
+            # Move to the next group of four binary digits
+            input_text = input_text[:-4]
+
+        return hex_result
 
 
     def save_to_file(binary_result, hex_result):
