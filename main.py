@@ -140,6 +140,8 @@ class ConversionSimulatorGUI(tk.Tk):
 # LOGIC SKELETON -- LOGIC FUNCTIONS ARE IN CONVERSION.PY
 
     def run_simulation(self):
+        self.result_text.config(state="normal")
+
         # Method to run the simulation
         self.result_text.delete(1.0, tk.END)  # Clear previous content
 
@@ -205,8 +207,12 @@ class ConversionSimulatorGUI(tk.Tk):
 
         self.result_text.insert(tk.END, "\n\nSimulation Completed!\n")
 
+        self.result_text.config(state="disabled") # Disable user editing
+
+
     def reset_display(self):
         # Method to reset the display
+        self.result_text.config(state="normal")
         self.result_text.delete(1.0, tk.END)
         self.input_entry.delete(0, tk.END)
         self.input_entry.focus()
