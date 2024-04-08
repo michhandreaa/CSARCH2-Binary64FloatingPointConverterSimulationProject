@@ -64,13 +64,8 @@ class ConversionSimulatorLogic:
             whole = int(input_text)
             binary_number = "0"
 
-        # TODO: Convert whole number to binary
-        whole_binary = bin(whole).lstrip("0b")
-
-#        print(binary_number)
-
         # TODO: Prepend the sign bit to the binary number
-        converted_binary = sign_bit + whole_binary + "." + binary_number
+        converted_binary = sign_bit + binary_number
 
         return converted_binary
 
@@ -81,6 +76,8 @@ class ConversionSimulatorLogic:
         converted_exponent = round(base2_exponent)
 
         return converted_exponent
+    
+    
 
     def convert_to_hexadecimal(input_text, step_by_step=False):
         pass  # Implement hexadecimal conversion logic
