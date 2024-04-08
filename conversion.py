@@ -71,7 +71,6 @@ class ConversionSimulatorLogic:
     # Convert decimal input from scientific notation to whole number (# x 10^0)
     def descientific_decimal(decimal_whole, decimal_exponent):
         descientify = float(decimal_whole) * (10**int(decimal_exponent))
-        print("descientify=", descientify)
         
         return descientify
 
@@ -145,9 +144,10 @@ class ConversionSimulatorLogic:
         f = new_mantissa.replace('.', '')  # Remove '.' from mantissa
         f = new_mantissa[2:] # excludes 1.
         f = f.ljust(52, '0')  # Right-pad with zeros to make it 52 bits
-
+        
+        s_case = ConversionSimulatorLogic.special_cases(str(sign), str(e_prime), str(f))
                         
-        return str(sign), str(e_prime), str(f)
+        return str(sign), str(e_prime), str(f), s_case
 
     def convert_to_hexadecimal(input_text):
 
@@ -168,3 +168,38 @@ class ConversionSimulatorLogic:
             input_text = input_text[:-4]
 
         return hex_result
+    
+    def special_cases(sign, e_prime, f):
+        s_case = ""
+        if e_prime == str(bin(0)[2:].zfill(11)):
+        # positive zero
+            if sign == "0" and f == str(bin(0)[2:].zfill(52)):
+                s_case = "Special Case: Positive Zero (+0)"
+        
+        # negative zero
+            elif sign == "1" and f == str(bin(0)[2:].zfill(52)):
+                s_case = "Special Case: Negative Zero (-0)"
+        
+        # denormalized
+        
+        
+        elif e_prime == str(bin(2047)[2:]):
+        # positive inf
+            if sign == "0" and f[0] == "0":
+                if f == str(bin(0)[2:].zfill(52)):
+                    s_case = "Special Case: Positive Infinity"
+                else: # sNaN
+                    s_case = "Special Case: sNaN"
+        
+        # negative inf
+            elif sign == "1":
+                if f == str(bin(0)[2:].zfill(52)):
+                    s_case = "Special Case: Negative Infinity"
+                elif f[0] == "1": # sNaN
+                    s_case = "Special Case: sNaN"
+        
+        # qNaN
+            elif f[0] == "1":
+                s_case = "Special Case: qNaN"
+        
+        return s_case

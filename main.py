@@ -190,7 +190,7 @@ class ConversionSimulatorGUI(tk.Tk):
                 self.result_text.insert(tk.END, binary_exponent_input)
                 
                 # convert to IEEE-754 rep
-                sign, e_prime, f = ConversionSimulatorLogic.converter64(binary_input, binary_exponent_input)
+                sign, e_prime, f, s_case = ConversionSimulatorLogic.converter64(binary_input, binary_exponent_input)
                 converted_IEEE = sign + e_prime + f
                 
                 # Convert to Hex
