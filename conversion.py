@@ -142,16 +142,26 @@ class ConversionSimulatorLogic:
         f = new_mantissa.replace('.', '')  # Remove '.' from mantissa
         f = new_mantissa[2:] # excludes 1.
         f = f.ljust(52, '0')  # Right-pad with zeros to make it 52 bits
+
+                        
+        return str(sign), str(e_prime), str(f)
+
+    def convert_to_hexadecimal(input_text):
+
+        # Initialize an empty string to store the hexadecimal result
+        hex_result = ''
+
+        for i in range(len(input_text) // 4):
+            # Extract a group of four binary digits
+            group = input_text[-4:]
             
-        binary_output = str(sign) + e_prime + f
-        
-        hex_output= hex(int(binary_output, 2))
-        
-        return sign, e_prime, f
+            # Convert the group to its corresponding hexadecimal digit
+            hex_digit = hex(int(group, 2))[2:].upper()
+            
+            # Prepend the hexadecimal digit to the result
+            hex_result = hex_digit + hex_result
+            
+            # Move to the next group of four binary digits
+            input_text = input_text[:-4]
 
-    def convert_to_hexadecimal(input_text, step_by_step=False):
-        pass  # Implement hexadecimal conversion logic
-
-
-    def save_to_file(binary_result, hex_result):
-        pass  # Implement save to file logic
+        return hex_result
