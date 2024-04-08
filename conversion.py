@@ -18,13 +18,12 @@ class ConversionSimulatorLogic:
         whole = int(whole)
         fraction = int(fraction) / 10 ** len(fraction)
 
-        # TODO: Convert whole number to binary
-        whole_binary = bin(whole).lstrip("0b")
-        
         # TODO: Convert fraction number to binary
         binary_number = bin(whole).lstrip("0b") + "."
 
-        while fraction != 0:
+        fraction_size_limit = 52-(len(whole)-1)
+        cnt = 0
+        while fraction != 0 and cnt <= fraction_size_limit:
             # print(binary_number, fraction)
             fraction = fraction * 2
             if fraction >= 1:
@@ -32,6 +31,7 @@ class ConversionSimulatorLogic:
                 binary_number = binary_number + "1"
             else:
                 binary_number = binary_number + "0"
+        cnt += 1
         print(binary_number)
 
         # TODO: Prepend the sign bit to the binary number
