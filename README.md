@@ -51,9 +51,15 @@ Print the result
 
 ### Test Case 1: Positive binary mantissa and base-2
 - Screenshot of the program output
-  ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/852a6f27-651c-40cf-8bab-c7f16614c036)
-- Input:
+![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/9a4473ea-33fd-4f34-bf7f-c7c80ef212c5)
+- Input: 1.00111x2<sup>5</sup>
 - Outputs:
+   - Sign: 0
+   - Exponent Representation: 1000000100
+   - Mantissa: 0011100000000000000000000000000000000000000000000000
+   - Binary Representation: 0100 0000 0100 0011 1000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
+   - Hexadecimal Representation: 0x4043800000000000
+    
 - Brief explanation of input and output:
 
 ### Test Case 2: Negative binary mantissa and base-2
@@ -65,7 +71,7 @@ Print the result
   
 ### Test Case 3: Positive decimal and base-10 
 - Screenshot of the program output
-  ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/5a1b5bcc-57e4-4af0-83e4-db13b0ddf09e)
+ ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/797395d5-ac33-49c3-bf4e-c05e876cae54)
 - Input:
 - Outputs:
 - Brief explanation of input and output:
