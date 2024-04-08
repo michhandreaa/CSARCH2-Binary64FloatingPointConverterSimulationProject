@@ -136,12 +136,9 @@ class ConversionSimulatorLogic:
         f = new_mantissa.replace('.', '')  # Remove '.' from mantissa
         f = new_mantissa[2:] # excludes 1.
         f = f.ljust(52, '0')  # Right-pad with zeros to make it 52 bits
-            
-        binary_output = str(sign) + e_prime + f
-        
-        hex_output= hex(int(binary_output, 2))
-        
-        return sign, e_prime, f
+
+                        
+        return str(sign), str(e_prime), str(f)
 
     def convert_to_hexadecimal(input_text, step_by_step=False):
         pass  # Implement hexadecimal conversion logic

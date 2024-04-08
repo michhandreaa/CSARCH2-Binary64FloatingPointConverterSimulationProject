@@ -161,9 +161,10 @@ class ConversionSimulatorGUI(tk.Tk):
                            
                 # convert to IEEE-754 rep
                 sign, e_prime, f = ConversionSimulatorLogic.converter64(binary_input, binary_exponent_input)
-                
-            #     # Convert to Hex
-            #     converted_hex = ConversionSimulatorLogic.convert_to_hexadecimal(converted_IEEE)
+                converted_IEEE = sign + e_prime + f
+
+                # Convert to Hex
+                converted_hex = ConversionSimulatorLogic.convert_to_hexadecimal(converted_IEEE)
 
 
         elif self.test_case_var.get() == "Decimal":
@@ -187,9 +188,10 @@ class ConversionSimulatorGUI(tk.Tk):
                 
                 # convert to IEEE-754 rep
                 sign, e_prime, f = ConversionSimulatorLogic.converter64(binary_input, binary_exponent_input)
+                converted_IEEE = sign + e_prime + f
                 
-                # # Convert to Hex
-                # converted_hex = ConversionSimulatorLogic.convert_to_hexadecimal(converted_IEEE)
+                # Convert to Hex
+                converted_hex = ConversionSimulatorLogic.convert_to_hexadecimal(converted_IEEE)
 
         self.result_text.insert(tk.END, "\n\nIEEE-754 Representation:\n")
         self.result_text.insert(tk.END, sign)
@@ -198,8 +200,8 @@ class ConversionSimulatorGUI(tk.Tk):
         self.result_text.insert(tk.END, " ")
         self.result_text.insert(tk.END, f)
 
-        # self.result_text.insert(tk.END, "\nHexadecimal:")
-        # self.result_text.insert(tk.END, converted_hex)
+        self.result_text.insert(tk.END, "\n\nHexadecimal:")
+        self.result_text.insert(tk.END, converted_hex)
 
         self.result_text.insert(tk.END, "\n\nSimulation Completed!\n")
 
