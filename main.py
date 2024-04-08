@@ -7,11 +7,10 @@ from conversion import ConversionSimulatorLogic
 
 
 OUTPUT_PATH = Path(__file__).parent
-ASSETS_PATH = OUTPUT_PATH / Path(r"C:\Users\3515\Downloads\csarch2\CSARCH2-Binary64FloatingPointConverterSimulationProject")
 
  # Defining function to convert relative path to absolute path
 def relative_to_assets(path: str) -> Path:
-    return ASSETS_PATH / Path(path)
+    return OUTPUT_PATH / Path(path)
 class ConversionSimulatorGUI(tk.Tk):
 
     def __init__(self):
@@ -145,20 +144,30 @@ class ConversionSimulatorGUI(tk.Tk):
             self.input_binary_entrytext.pack_forget()
             self.input_exponent_binary_entry.pack_forget()
 
+
     def run_simulation(self):
         # Method to run the simulation
         self.result_text.delete(1.0, tk.END)  # Clear previous content
 
-        # Get input and step-by-step value
-        test_case = self.input_entry.get()
-        step_by_step = self.step_by_step_var.get()
+        # Get input values based on selected input type
+        if self.test_case_var.get() == "Binary":
+            # Fetch binary input values
+            binary_input = self.input_binary_entry.get()
+            binary_exponent_input = self.input_exponent_binary_entry.get()
 
-        # Initialize simulator
-        simulator = ConversionSimulatorLogic()
-        simulator.simulate(test_case, step_by_step)
+            # Call validateInput from conversion.py
+            simulator = ConversionSimulatorLogic.validateInput(binary_input, binary_exponent_input, self.test_case_var.get(), self.result_text)
+
+        elif self.test_case_var.get() == "Decimal":
+            # Fetch decimal input values
+            decimal_input = self.input_decimal_entry.get()
+            decimal_exponent_input = self.input_exponent_decimal_entry.get()
+
+            # Call validateInput from conversion.py
+            simulator = ConversionSimulatorLogic.validateInput(decimal_input, decimal_exponent_input, self.test_case_var, self.result_text)
 
         # Display simulation completion message
-        self.result_text.insert(tk.END, "Simulation Completed!\n")
+        self.result_text.insert(tk.END, "\nSimulation Completed!\n")
 
     def reset_display(self):
         # Method to reset the display
