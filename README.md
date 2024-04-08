@@ -11,6 +11,7 @@
 ## Introduction
 
 ### About the App:
+This simulation project is a stand-alone IEEE-754 Binary-64 Floating Point Converter. The project was made using Python and using tkinter library for the GUI. 
 
 ### Members:
 - Martinez, Michelle Andrea H.
@@ -59,8 +60,6 @@ Print the result
    - Mantissa: 0011 1000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
    - Binary Representation: 0b0100 0000 0100 0011 1000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
    - Hexadecimal Representation: 0x4043800000000000
-    
-- Brief explanation of input and output:
 
 ### Test Case 2: Negative binary mantissa and base-2
 - Screenshot of the program output
@@ -72,7 +71,6 @@ Print the result
    - Mantissa: 0000 0001 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
    - Binary Representation: 0b1100 0000 0111 0000 0001 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
    - Hexadecimal Representation: 0xC070100000000000
-- Brief explanation of input and output:
   
 ### Test Case 3: Positive decimal and base-10 
 - Screenshot of the program output
@@ -84,7 +82,6 @@ Print the result
    - Mantissa: 1111 1011 1101 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
    - Binary Representation: 0b0100 0000 1110 1111 1011 1101 0000 0000 0000 0000 0000 0000 0000 0000 0000 0000
    - Hexadecimal Representation: 0x40EFBD0000000000
-- Brief explanation of input and output:
 
 ### Test Case 4: Negative decimal and base-10 
 - Screenshot of the program output
@@ -96,7 +93,6 @@ Print the result
    - Mantissa: 0101 0010 1000 1101 1110 1100 0000 0000 0000 0000 0000 0000 0000
    - Binary Representation: 0b1100 0001 1000 0101 0010 1000 1101 1110 1100 0000 0000 0000 0000 0000 0000 0000
    - Hexadecimal Representation: 0xC18528DEC0000000
-- Brief explanation of input and output:
 
 ### Test Case 5:  Binary Positive 0 
 - Screenshot of the program output
@@ -108,7 +104,6 @@ Print the result
    - Mantissa:
    - Binary Representation: 
    - Hexadecimal Representation: 
-- Brief explanation of input and output:
 
 ### Test Case 6:  Binary Negative 0 
 - Screenshot of the program output
@@ -119,7 +114,6 @@ Print the result
    - Mantissa:
    - Binary Representation: 
    - Hexadecimal Representation: 
-- Brief explanation of input and output:
 
 ### Test Case 7:  Decimal Positive 0 
 - Screenshot of the program output
@@ -130,7 +124,6 @@ Print the result
    - Mantissa:
    - Binary Representation: 
    - Hexadecimal Representation: 
-- Brief explanation of input and output:
 
 ### Test Case 8:  Decimal Negative 0 
 - Screenshot of the program output
@@ -141,9 +134,8 @@ Print the result
    - Mantissa:
    - Binary Representation: 
    - Hexadecimal Representation: 
-- Brief explanation of input and output:
 
-### Test Case 6: Special case infinity
+### Test Case 9: Special case infinity
 - Screenshot of the program output
 - Input: 
 - Outputs:
@@ -152,9 +144,8 @@ Print the result
    - Mantissa:
    - Binary Representation: 
    - Hexadecimal Representation: 
-- Brief explanation of input and output:
 
-### Test Case 7: Special case denormalized
+### Test Case 10: Special case denormalized
 - Screenshot of the program output
 - Input: 
 - Outputs:
@@ -163,9 +154,8 @@ Print the result
    - Mantissa:
    - Binary Representation: 
    - Hexadecimal Representation: 
-- Brief explanation of input and output:
 
-### Test Case 8: Special case SNaN
+### Test Case 11: Special case SNaN
 - Screenshot of the program output
 - Input: 
 - Outputs:
@@ -174,9 +164,8 @@ Print the result
    - Mantissa:
    - Binary Representation: 
    - Hexadecimal Representation: 
-- Brief explanation of input and output:
 
-### Test Case 9: Special case QNaN
+### Test Case 12: Special case QNaN
 - Screenshot of the program output
 - Input: 
 - Outputs:
@@ -185,9 +174,8 @@ Print the result
    - Mantissa:
    - Binary Representation: 
    - Hexadecimal Representation: 
-- Brief explanation of input and output:
   
-### Test Case 10: None of the above (error catching)
+### Test Case 13: None of the above (error catching)
 - Screenshot of the program output
 - Input: 
 - Outputs:
@@ -196,7 +184,6 @@ Print the result
    - Mantissa:
    - Binary Representation: 
    - Hexadecimal Representation: 
-- Brief explanation of input and output:
 
 ## Source Code
 [Link to source code](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/)
