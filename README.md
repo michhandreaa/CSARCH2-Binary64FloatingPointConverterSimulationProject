@@ -2,7 +2,7 @@
 
 ## Contents
 - [Introduction](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject?tab=readme-ov-file#introduction)
-- [Video Demonstration](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject?tab=readme-ov-filed#video-demonstration)
+- [Video Demonstration](https://drive.google.com/drive/folders/1vo1XsZO4flkhuDTrSAO25WQ6_eJbAzoJ?fbclid=IwAR18v4aD8gFXr5OAi47b4o2QzWRjyLqmDtnf1VTd-vw5kqFI5eyj6Qib1dM)
 - [Test Cases](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject?tab=readme-ov-file#test-cases)
 - [Source Code](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject?tab=readme-ov-file#source-code)
 - [Analysis Writeup](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject?tab=readme-ov-file#analysis-writeup)
@@ -66,22 +66,15 @@ Print the result
 ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/38d58bed-d88a-4892-b319-4f3f7f114c35)
 
 ### Test Case 7:  Decimal Positive 0 
+![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/053e1060-71a1-4be2-b4f6-0405827dee2b)
 
 ### Test Case 8:  Decimal Negative 0 
+![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/8e112ac0-66f0-4dc6-893c-ad773e764135)
 
-### Test Case 9: Special case infinity
 
-### Test Case 10: Special case denormalized
-
-### Test Case 11: Special case SNaN
-
-### Test Case 12: Special case QNaN
-  
-### Test Case 13: None of the above (error catching)
 
 ## Source Code
 [Link to source code](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/)
 
 ## Analysis Writeup
 
-## Key Takeaways
