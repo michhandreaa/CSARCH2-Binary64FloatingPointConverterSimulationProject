@@ -51,24 +51,28 @@ Print the result
 
 ### Test Case 1: Positive binary mantissa and base-2
 - Screenshot of the program output
+  ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/852a6f27-651c-40cf-8bab-c7f16614c036)
 - Input:
 - Outputs:
 - Brief explanation of input and output:
 
 ### Test Case 2: Negative binary mantissa and base-2
 - Screenshot of the program output
+  ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/b2cb8e42-3a8a-471e-b0d3-f061870d16e3)
 - Input:
 - Outputs:
 - Brief explanation of input and output:
   
 ### Test Case 3: Positive decimal and base-10 
 - Screenshot of the program output
+  ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/5a1b5bcc-57e4-4af0-83e4-db13b0ddf09e)
 - Input:
 - Outputs:
 - Brief explanation of input and output:
 
 ### Test Case 4: Negative decimal and base-10 
 - Screenshot of the program output
+  ![image](https://github.com/michhandreaa/CSARCH2-Binary64FloatingPointConverterSimulationProject/assets/106814132/4af3a853-6686-43bd-b241-d9854f7a31e4)
 - Input:
 - Outputs:
 - Brief explanation of input and output:
