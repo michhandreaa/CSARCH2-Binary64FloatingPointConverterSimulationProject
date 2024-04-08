@@ -31,7 +31,13 @@ class ConversionSimulatorLogic:
 
     # assume correct decimal and exponent inputs
     def convert_to_binary(input_text):
-        if ConversionSimulatorLogic.check_if_zero_input(input_text):
+        if input_text[0] == '-' or '+':
+            if ConversionSimulatorLogic.check_if_zero_input(input_text[1:]):
+                if input_text[0] == '-':
+                    return "-0.0"
+                else:
+                    return 0.0
+        elif ConversionSimulatorLogic.check_if_zero_input(input_text):
             return 0.0
 
         if input_text.count('.') == 1: # if inputted text has BOTH whole and fraction    
@@ -124,6 +130,7 @@ class ConversionSimulatorLogic:
 
         # ------------ SIGN BIT ------------
         # mantissa and exponent are str
+        print(mantissa)
         if mantissa[0] == '-':
             sign = 1
             mantissa = mantissa[1:] # removes (-) sign

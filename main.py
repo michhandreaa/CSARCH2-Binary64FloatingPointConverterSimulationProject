@@ -182,11 +182,12 @@ class ConversionSimulatorGUI(tk.Tk):
                 # Convert to Binary                
                 whole_decimal = str(ConversionSimulatorLogic.descientific_decimal(decimal_input, decimal_exponent_input))
                 binary_of_decimal = ConversionSimulatorLogic.convert_to_binary(whole_decimal)
-                if binary_of_decimal != 0.0:
-                    binary_input, binary_exponent_input = ConversionSimulatorLogic.normalize(binary_of_decimal, 0)
-                else:
+                if binary_of_decimal == "0.0" or "-0.0":
                     binary_input = binary_of_decimal
                     binary_exponent_input = 0
+                else:
+                    binary_input, binary_exponent_input = ConversionSimulatorLogic.normalize(binary_of_decimal, 0)
+
 
                 self.result_text.insert(tk.END, "\nBinary:")
                 self.result_text.insert(tk.END, binary_input)
