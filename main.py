@@ -212,7 +212,16 @@ class ConversionSimulatorGUI(tk.Tk):
         self.input_entry.focus()
 
     def save_to_file(self):
-        pass  # Implement save to file logic
+        
+        try:
+            content = self.result_text.get("1.0", tk.END)
+
+            file = open("resultOutput.txt", 'w')
+            file.write(content)
+            file.close()  # Close the file explicitly
+            self.result_text.insert(tk.END, "\nResult exported to resultOutput.txt!\n")
+        except IOError:
+            self.result_text.insert(tk.END, "\nError: Unable to export result.\n")
 
 if __name__ == "__main__":
     # Run the GUI application

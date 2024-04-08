@@ -159,7 +159,3 @@ class ConversionSimulatorLogic:
             input_text = input_text[:-4]
 
         return hex_result
-
-
-    def save_to_file(binary_result, hex_result):
-        pass  # Implement save to file logic
