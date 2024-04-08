@@ -6,7 +6,7 @@ class ConversionSimulatorLogic:
 
 # DONE
     def is_float(input_string, exponent_string):  # checking if input is numeric after removing . and exponent is numeric
-        if input_string.replace(".", "").isnumeric() and exponent_string.isnumeric():
+        if input_string.replace(".", "").isnumeric() and exponent_string.replace("-", "", 1).isdigit():
             return True
         else:
             return False
@@ -91,6 +91,10 @@ class ConversionSimulatorLogic:
         exponent = int(exponent)
         new_mantissa = mantissa.replace('.', '')
         
+        # If there is no '.', append it to the rightmost part of the string and set exponent to 0
+        if '.' not in mantissa:
+            mantissa += '.'
+
         #Find the index of the first '1' in the mantissa
         one_index = new_mantissa.find('1')
         
