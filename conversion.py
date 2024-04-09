@@ -31,14 +31,6 @@ class ConversionSimulatorLogic:
 
     # assume correct decimal and exponent inputs
     def convert_to_binary(input_text):
-        if input_text[0] == '-' or '+':
-            if ConversionSimulatorLogic.check_if_zero_input(input_text[1:]):
-                if input_text[0] == '-':
-                    return "-0.0"
-                else:
-                    return 0.0
-        elif ConversionSimulatorLogic.check_if_zero_input(input_text):
-            return 0.0
 
         if input_text.count('.') == 1: # if inputted text has BOTH whole and fraction    
             # TODO: Separate whole number from fraction
@@ -138,6 +130,7 @@ class ConversionSimulatorLogic:
             if mantissa[0] == '+':
                 mantissa = mantissa[1:] # removes (+) sign
             sign = 0
+        print(mantissa)
         if ConversionSimulatorLogic.check_if_zero_input(mantissa):
             if sign == 0:
                 e_prime = '0' * 11
